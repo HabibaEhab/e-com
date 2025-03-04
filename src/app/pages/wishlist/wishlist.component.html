@@ -1,0 +1,42 @@
+<section class="bg-gray-50 rounded border shadow p-4 w-[75%] mx-auto">
+
+    <h1 class="text-center text-3xl text-green-600 font-medium">Wishlist</h1>
+
+    
+
+    @for(prod of listDetails; track prod._id){
+
+        <div class="grid md:grid-cols-[10%_minmax(0,1fr)] border-b mb-2">
+            
+            <div>
+    
+                <img [src]="prod.imageCover" class="w-full h-[100px] object-contain" [alt]="prod.title">
+    
+            </div>
+    
+           
+            <div class="flex justify-between items-center">
+    
+                
+                 <div>
+                    <h3 class="font-medium">{{prod.title}}</h3>
+                    <h4>Price: {{prod.price | currency:'EGP ' }}</h4>
+                    <button (click)="removeListItem(prod._id)"> <i class="fas fa-trash-can text-green-600"></i> Remove</button>
+    
+                 </div>
+
+
+                 <button (click)="addToCart(prod._id)" class="btn-main">Add to Cart</button>
+    
+                 
+    
+            </div>
+    
+        </div>
+
+    }
+
+
+</section>
+
+

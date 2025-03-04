@@ -1,0 +1,173 @@
+
+<!-- <div class="wallpaper relative  ">
+
+ <section class="w-1/2 mx-auto bg-gray-50 p-4 rounded border shadow absolute top-[50%] left[50%] translate-x-[50%] -translate-y-[50%]">
+  <h1 class="text-3xl font-medium text-center text-green-600">Login Now</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+
+
+      <div class="mb-1">
+          @let emailControl = loginForm.get('email');
+          <label for="email" class="block mb-2 text-sm font-medium capitalize text-gray-900 dark:text-white">email</label>
+          <input formControlName="email" type="email" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8B5E35] focus:border-[#8B5E35] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+          @if(emailControl?.errors && emailControl?.touched){
+              <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+
+                  <span class="sr-only">Danger</span>
+                  <div>
+                  
+                      <ul class="mt-1.5 list-disc list-inside">
+                        @if(emailControl?.getError('required')){
+                          <li>This field is required</li>
+                        }
+                        @else if(emailControl?.getError('email')){
+                          <li>Enter a valid email address</li>
+                        }
+                        
+                    </ul>
+                  </div>
+              </div>
+          }
+
+      </div>
+
+      <div class="mb-1">
+          @let passwordControl = loginForm.get('password');
+          <label for="password" class="block mb-2 text-sm font-medium capitalize text-gray-900 dark:text-white">password</label>
+          <input formControlName="password" type="password" id="password" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#8B5E35] focus:border-[#8B5E35] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+          @if(passwordControl?.errors && passwordControl?.touched){
+              <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+
+                  <span class="sr-only">Danger</span>
+                  <div>
+                  
+                      <ul class="mt-1.5 list-disc list-inside">
+                        @if(passwordControl?.getError('required')){
+                          <li>This field is required</li>
+                        }
+                        @else if(passwordControl?.getError('pattern')){
+                          <li>Enter a valid password</li>
+                        }
+                        
+                    </ul>
+                  </div>
+              </div>
+          }
+
+      </div>
+
+
+      <button [disabled]="isLoading" type="submit" class="btn-main">
+        Login
+
+        @if(isLoading){
+          <span><i class="fas fa-spin fa-spinner"></i></span>
+        }
+        
+      </button>
+
+      @if(msgError){
+        <p class="bg-[#d00439] text-white px-2 py-4 border">{{msgError}}</p>
+      }
+
+      @if(isSuccess){
+        <p class="bg-green-300 text-white px-2 py-4 border">Logged in sucessfully</p>
+      }
+
+  </form>
+</section>
+
+
+</div> -->
+
+
+
+
+
+<section class="w-1/2 mx-auto bg-gray-50 p-4 rounded border shadow">
+  <h1 class="text-3xl font-medium text-center text-green-600">Login Now</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+
+
+      <div class="mb-1">
+          @let emailControl = loginForm.get('email');
+          <label for="email" class="block mb-2 text-sm font-medium capitalize text-gray-900 dark:text-white">email</label>
+          <input formControlName="email" type="email" id="email" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+          @if(emailControl?.errors && emailControl?.touched){
+              <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+
+                  <span class="sr-only">Danger</span>
+                  <div>
+                  
+                      <ul class="mt-1.5 list-disc list-inside">
+                        @if(emailControl?.getError('required')){
+                          <li>This field is required</li>
+                        }
+                        @else if(emailControl?.getError('email')){
+                          <li>Enter a valid email address</li>
+                        }
+                        
+                    </ul>
+                  </div>
+              </div>
+          }
+
+      </div>
+
+      <div class="mb-1">
+          @let passwordControl = loginForm.get('password');
+          <label for="password" class="block mb-2 text-sm font-medium capitalize text-gray-900 dark:text-white">password</label>
+          <input formControlName="password" type="password" id="password" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500">
+
+          @if(passwordControl?.errors && passwordControl?.touched){
+              <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+
+                  <span class="sr-only">Danger</span>
+                  <div>
+                  
+                      <ul class="mt-1.5 list-disc list-inside">
+                        @if(passwordControl?.getError('required')){
+                          <li>This field is required</li>
+                        }
+                        @else if(passwordControl?.getError('pattern')){
+                          <li>Enter a valid password</li>
+                        }
+                        
+                    </ul>
+                  </div>
+              </div>
+          }
+
+      </div>
+
+
+      <div class="flex items-center justify-between">
+
+        <a routerLink="/forgotpassword" >Forgot Password?</a>
+
+        <button [disabled]="isLoading" type="submit" class="btn-main">
+         Login
+
+         @if(isLoading){
+            <span><i class="fas fa-spin fa-spinner"></i></span>
+          }
+        
+        </button>
+
+      </div>
+
+      @if(msgError){
+        <p class="bg-[#d00439] text-white px-2 py-4 border">{{msgError}}</p>
+      }
+
+      @if(isSuccess){
+        <p class="bg-green-300 text-white px-2 py-4 border">Logged in sucessfully</p>
+      }
+
+  </form>
+</section>
